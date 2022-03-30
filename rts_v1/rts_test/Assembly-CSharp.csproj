@@ -57,6 +57,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\scripts\Globals.cs" />
+    <Compile Include="Assets\scripts\BuildingPlace.cs" />
     <Compile Include="Assets\scripts\man_manager.cs" />
     <Compile Include="Assets\scripts\Fly_camera.cs" />
     <Compile Include="Assets\scripts\examplewindows.cs" />
@@ -65,7 +66,7 @@
     <Compile Include="Assets\scripts\BuildingData.cs" />
     <Compile Include="Assets\scripts\panelOpen.cs" />
     <Compile Include="Assets\scripts\Building.cs" />
-    <Compile Include="Assets\scripts\BuildingPlace.cs" />
+    <Compile Include="Assets\scripts\UImanager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

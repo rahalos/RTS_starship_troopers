@@ -8,7 +8,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace></RootNamespace>
+    <RootNamespace>
+    </RootNamespace>
     <ProjectGuid>{AC06C1B6-9C22-D192-F4AA-09F3B6DF2289}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -56,15 +57,16 @@
     <Analyzer Include="D:\Program fail\visualst\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Globals.cs" />
     <Compile Include="Assets\scipts\man_manager.cs" />
     <Compile Include="Assets\scipts\Fly_camera.cs" />
     <Compile Include="Assets\scipts\examplewindows.cs" />
     <Compile Include="Assets\scipts\color.cs" />
+    <Compile Include="Assets\Building_manager.cs" />
+    <Compile Include="Assets\BuildingData.cs" />
     <Compile Include="Assets\scipts\panelOpen.cs" />
-    <Compile Include="Assets\bilding_base_man.cs" />
-    <Compile Include="Assets\BildingData.cs" />
-    <Compile Include="Assets\Global.cs" />
     <Compile Include="Assets\Building.cs" />
+    <Compile Include="Assets\BuildingPlace.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

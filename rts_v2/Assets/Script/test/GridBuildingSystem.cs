@@ -153,9 +153,21 @@ public class GridBuildingSystem : MonoBehaviour
 
         for (int i = 0; i < baseArray.Length; i++)
         {
-           
+           if(baseArray[i] == tileBases[TileType.White])
+            {
+                tileArray[i] = tileBases[TileType.Green];
+            }
+            else
+            {
+                FillTiles(tileArray, TileType.Red);
+                break;
+
+            }
         }
-            
+
+        Temptilemap.SetTilesBlock(buildingArea, tileArray);
+        prevArea = buildingArea;
+
     }
 
     #endregion

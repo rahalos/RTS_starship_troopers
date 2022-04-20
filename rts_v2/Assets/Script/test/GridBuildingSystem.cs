@@ -65,6 +65,7 @@ public class GridBuildingSystem : MonoBehaviour
                     temp.transform.localPosition = gridLayout.CellToLocalInterpolated(cellPos
                         + new Vector3(0f, 0f , 0f));
                     prevPos = cellPos;
+                    FollowBuilding();
                 }
             }
 
@@ -125,7 +126,7 @@ public class GridBuildingSystem : MonoBehaviour
     public void InitializeWithBulding(GameObject building)
     {
         temp = Instantiate(building, Vector3.zero, Quaternion.identity).GetComponent<Building>();
-        
+        FollowBuilding();
     
     }
 

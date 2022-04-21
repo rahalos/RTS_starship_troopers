@@ -65,6 +65,7 @@ public class GridBuildingSystem : MonoBehaviour
                     temp.transform.localPosition = gridLayout.CellToLocalInterpolated(cellPos
                         + new Vector3(0f, 0f , 0f));
                     prevPos = cellPos;
+                    FollowBuilding();
                 }
             }
 
@@ -153,7 +154,7 @@ public class GridBuildingSystem : MonoBehaviour
 
         for (int i = 0; i < baseArray.Length; i++)
         {
-           if(baseArray[i] == tileBases[TileType.White])
+            if (baseArray[i] == tileBases[TileType.White])
             {
                 tileArray[i] = tileBases[TileType.Green];
             }
@@ -167,7 +168,8 @@ public class GridBuildingSystem : MonoBehaviour
 
         Temptilemap.SetTilesBlock(buildingArea, tileArray);
         prevArea = buildingArea;
-
+    
+            
     }
 
     #endregion

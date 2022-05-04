@@ -7,18 +7,27 @@ public class EnemyScr : MonoBehaviour
 
     List<GameObject> wayPoints = new List<GameObject>();
 
+    public GameObject wayPointsParent;
+
     int wayIndex = 0;
-    int speed = 10;
+    int speed = 5;
 
     void Start()
     {
-        wayPoints = GameObject.Find("Main Camera").GetComponent<GameControlScr>().WayPoints;
+        GetWayPoints();
     }
 
    
     void Update()
     {
         Move();
+    }
+
+
+    void GetWayPoints()
+    {
+        for (int i = 0; i < wayPointsParent.transform.childCount; i++)
+            wayPoints.Add(wayPointsParent.transform.GetChild(i).gameObject);
     }
 
 

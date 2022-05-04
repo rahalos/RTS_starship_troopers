@@ -8,6 +8,8 @@ public class GameControlScr : MonoBehaviour
 
     int[] pathID = { 23, 24, 25, 26, 27, 49, 71, 93, 115 , 116, 117, 118, 119, 120, 142, 164, 165, 166,167, 189, 211, 212, 213, 214, 215, 216, 217, 218 };
 
+    public List<GameObject> WayPoints = new List<GameObject>();
+
     public GameObject cellPrefab;
     public Transform cellGroup;
 

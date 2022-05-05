@@ -361,7 +361,7 @@ GameObject:
   - component: {fileID: 1016141291}
   - component: {fileID: 1016141290}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -379,7 +379,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56033097435d4984b8af162035752731, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 7286378015455681816, guid: 3da07ebfd32fe294ba4d6d0abb9a86c1, type: 3}
 --- !u!4 &1016141291
 Transform:
   m_ObjectHideFlags: 0
@@ -627,8 +626,9 @@ GameObject:
   - component: {fileID: 1644504918}
   - component: {fileID: 1644504917}
   - component: {fileID: 1644504916}
+  - component: {fileID: 1644504919}
   m_Layer: 5
-  m_Name: Button
+  m_Name: tower_red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -698,7 +698,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1644504917}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1016141290}
+        m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
+        m_MethodName: PickTower
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1644504919}
+          m_ObjectArgumentAssemblyTypeName: TowenBtn, Assembly-CSharp
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1644504917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -737,3 +749,16 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644504914}
   m_CullTransparentMesh: 1
+--- !u!114 &1644504919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1644504914}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e47e5b82033ff2e4eb73e48f44b5c21d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 7286378015455681816, guid: 3da07ebfd32fe294ba4d6d0abb9a86c1, type: 3}

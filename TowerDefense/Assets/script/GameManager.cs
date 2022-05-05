@@ -4,18 +4,7 @@ using UnityEngine;
 
 public class GameManager : Singleton<GameManager>
 {
-    [SerializeField]
-    private GameObject towerPrefab;
-
-    public GameObject TowerPrefab
-    {
-        get
-        {
-            return towerPrefab;
-        }
-
-
-    }
+   public TowenBtn clickedBtn { get; private set; }
    
 
 
@@ -28,6 +17,19 @@ public class GameManager : Singleton<GameManager>
     // Update is called once per frame
     void Update()
     {
+       
         
+       
     }
+
+    public void PickTower(TowenBtn towenBtn)
+    {
+        this.clickedBtn = towenBtn;
+    }
+
+    public void buyTower()
+    {
+        clickedBtn = null;
+    }
+
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class CellScr : MonoBehaviour
 {
+    public bool isGround;
 
     // Start is called before the first frame update
     void Start()

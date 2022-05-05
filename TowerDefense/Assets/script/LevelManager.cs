@@ -3,10 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class LevelManager : MonoBehaviour
+public class LevelManager : Singleton<LevelManager>
 {
     [SerializeField]
     private GameObject[] tilePreafbs;
+
+    [SerializeField]
+    private Transform map;
+
+    public Dictionary<Point, TileScript> Tiles { get; set; }
 
     public float TileSize
     {
@@ -17,14 +22,13 @@ public class LevelManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Point p = new Point(2, 0);
-        Debug.Log(p.X);
-        TestValue(p);
-        Debug.Log(p.X);
+        
 
 
         CreateLevel();
+    
    
+
     }
 
     // Update is called once per frame
@@ -32,6 +36,8 @@ public class LevelManager : MonoBehaviour
     {
         
     }
+ 
+    
 
     public void TestValue(Point p)
     {
@@ -41,6 +47,8 @@ public class LevelManager : MonoBehaviour
 
     private void CreateLevel()
     {
+        Tiles = new Dictionary<Point, TileScript>();
+
         string[] mapData = ReadLevelText();
        
         int mapX = mapData[0].ToCharArray().Length;
@@ -68,8 +76,9 @@ public class LevelManager : MonoBehaviour
         TileScript newTile = Instantiate(tilePreafbs[tileIndex]).GetComponent<TileScript>();
         
 
-        newTile.Setup(new Point(x, y), new Vector3(worldStart.x + (TileSize * x), worldStart.y - (TileSize * y), 0));
+        newTile.Setup(new Point(x, y), new Vector3(worldStart.x + (TileSize * x), worldStart.y - (TileSize * y), 0), map);
 
+       
         
     }
 
@@ -81,5 +90,7 @@ public class LevelManager : MonoBehaviour
 
         return data.Split('-');
     }
+
+   
 
 }

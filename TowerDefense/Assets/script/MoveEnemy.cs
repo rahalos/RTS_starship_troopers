@@ -2,50 +2,48 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class MoveEnemy : MonoBehaviour
 {
-    [HideInInspector]
-    public GameObject[] waypoints;
-    private int currentWaypoint = 0;
-    private float lastWaypointSwitchTime;
-    public float speed = 1.0f;
+    public float speed = 5f;
 
+    private Transform target;
+    private int wavepointIndex = 0;
 
-    // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
-        lastWaypointSwitchTime = Time.time;
+        target = SpawnEnemy.points[0];
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
-        Vector3 startPosition = waypoints[currentWaypoint].transform.position;
-        Vector3 endPosition = waypoints[currentWaypoint + 1].transform.position;
-       
-        float pathLength = Vector3.Distance(startPosition, endPosition);
-        float totalTimeForPath = pathLength / speed;
-        float currentTimeOnPath = Time.time - lastWaypointSwitchTime;
-        gameObject.transform.position = Vector2.Lerp(startPosition, endPosition, currentTimeOnPath / totalTimeForPath);
-        
-        if (gameObject.transform.position.Equals(endPosition))
+        Vector3 dir = target.position - transform.position;
+        transform.Translate(dir.normalized * speed * Time.deltaTime, Space.World);
+        if (Vector3.Distance(transform.position, target.position) <= 0.2f)
         {
-            if (currentWaypoint < waypoints.Length - 2)
-            {
-               
-                currentWaypoint++;
-                lastWaypointSwitchTime = Time.time;
-                
-            }
-            else
-            {
-                // 3.b 
-                Destroy(gameObject);
-
-               
-                
-            }
+            GetNextWaypoint();
         }
+           
+        void GetNextWaypoint()
+        {
+
+            
+
+            if (wavepointIndex >= SpawnEnemy.points.Length - 1)
+            {
+                Destroy(gameObject);
+                return;
+            }
+
+
+            wavepointIndex++;
+            target = SpawnEnemy.points[wavepointIndex];
+        }
+
+
+    
+
+
     }
+
 }

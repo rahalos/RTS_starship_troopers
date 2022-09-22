@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 900758668417284509}
   - component: {fileID: 650893000756228601}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: towers_walls_blank_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7734045454102125993}
-  m_Layer: 0
+  - component: {fileID: 5742830238349919409}
+  m_Layer: 2
   m_Name: Tower2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -117,6 +118,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5742830238349919409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7286378015455681816}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5ba00b7c2753acd489f6b7971e039dcf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CurrCoolDown: 0
+  CoolDown: 0.3
+  projectile: {fileID: 0}
 --- !u!1001 &386177256365561058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -135,6 +151,10 @@ PrefabInstance:
     - target: {fileID: 3745057877951914004, guid: db6117c9df2cb8e4e8219c74840f2f06, type: 3}
       propertyPath: m_Name
       value: turret_a1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3745057877951914004, guid: db6117c9df2cb8e4e8219c74840f2f06, type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6634755676027815294, guid: db6117c9df2cb8e4e8219c74840f2f06, type: 3}
       propertyPath: m_RootOrder
@@ -179,6 +199,10 @@ PrefabInstance:
     - target: {fileID: 6634755676027815294, guid: db6117c9df2cb8e4e8219c74840f2f06, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7062087962369430814, guid: db6117c9df2cb8e4e8219c74840f2f06, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db6117c9df2cb8e4e8219c74840f2f06, type: 3}

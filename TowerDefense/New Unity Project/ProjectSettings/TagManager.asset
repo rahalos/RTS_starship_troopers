@@ -3,11 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - crip
-  - MoviengPoint
-  - Enemy
-  - enemy
+  tags: []
   layers:
   - Default
   - TransparentFX

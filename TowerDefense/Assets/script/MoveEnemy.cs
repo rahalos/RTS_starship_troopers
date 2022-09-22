@@ -6,6 +6,7 @@ using UnityEngine;
 public class MoveEnemy : MonoBehaviour
 {
     public float speed = 5f;
+    public int health = 30;
 
     private Transform target;
     private int wavepointIndex = 0;
@@ -40,10 +41,22 @@ public class MoveEnemy : MonoBehaviour
             target = SpawnEnemy.points[wavepointIndex];
         }
 
-
+        Cheklife();
     
 
 
+    }
+
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+    }
+
+    void Cheklife()
+    {
+        if (health <= 0)
+            Destroy(gameObject);
     }
 
 }
